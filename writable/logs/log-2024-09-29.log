@@ -1,0 +1,924 @@
+INFO - 2024-09-29 08:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 08:29:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 08:29:55 --> mysqli_sql_exception: Unknown column 'owners.id' in 'field list' in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appoint...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appoint...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appoint...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appoint...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\cx-pets\app\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-29 08:29:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'owners.id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = :appointment_date:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 08:29:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'owners.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = :appointment_date:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 08:29:55 --> [Caused by] mysqli_sql_exception: Unknown column 'owners.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = :appointment_date:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 08:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 08:30:33 --> mysqli_sql_exception: Unknown column 'owners.id' in 'field list' in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appoint...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appoint...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appoint...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appoint...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\cx-pets\app\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-29 08:30:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'owners.id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = :appointment_date:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 08:30:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'owners.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = :appointment_date:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 08:30:33 --> [Caused by] mysqli_sql_exception: Unknown column 'owners.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = \'2024-09-30\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.`id`, `appointments`.`owner_id`, `appointments`.`pet_id`, `appointments`.`appointment_date`, `appointments`.`appointment_time`, `appointments`.`reason`, `appointments`.`status`, `owners`.`id` AS `owId`, `owners`.`ic`, `owners`.`first_name`, `owners`.`last_name`, `owners`.`email`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `appointments`
+WHERE `appointment_date` = :appointment_date:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(641): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 08:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 08:35:13 --> ErrorException: Undefined property: App\Controllers\Dashboard::$appointmentsModel
+in APPPATH\Controllers\Dashboard.php on line 18.
+ 1 APPPATH\Controllers\Dashboard.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Dashboard::$appointmentsModel', 'C:\\laragon\\www\\cx-pets\\app\\Controllers\\Dashboard.php', 18)
+ 2 APPPATH\Controllers\Dashboard.php(30): App\Controllers\Dashboard->getAppointmentsByDate('2024-09-30')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 08:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:29:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:29:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:30:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:47:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 09:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:05:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:29:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:29:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:41:46 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+CRITICAL - 2024-09-29 10:41:46 --> ErrorException: Undefined property: App\Controllers\Prescriptions::$PagosModel
+in APPPATH\Controllers\Prescriptions.php on line 272.
+ 1 APPPATH\Controllers\Prescriptions.php(272): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Prescriptions::$PagosModel', 'C:\\laragon\\www\\cx-pets\\app\\Controllers\\Prescriptions.php', 272)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Prescriptions->sendVoucherByEmail('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prescriptions))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 10:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:47:05 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+CRITICAL - 2024-09-29 10:47:05 --> TypeError: file_exists(): Argument #1 ($filename) must be of type string, CodeIgniter\HTTP\RedirectResponse given
+in APPPATH\Controllers\Prescriptions.php on line 274.
+ 1 APPPATH\Controllers\Prescriptions.php(274): file_exists(Object(CodeIgniter\HTTP\RedirectResponse))
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Prescriptions->sendVoucherByEmail('16')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prescriptions))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 10:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:47:50 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+INFO - 2024-09-29 10:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:47:53 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+INFO - 2024-09-29 10:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:48:57 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+CRITICAL - 2024-09-29 10:48:57 --> TypeError: file_exists(): Argument #1 ($filename) must be of type string, CodeIgniter\HTTP\RedirectResponse given
+in APPPATH\Controllers\Prescriptions.php on line 274.
+ 1 APPPATH\Controllers\Prescriptions.php(274): file_exists(Object(CodeIgniter\HTTP\RedirectResponse))
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Prescriptions->sendVoucherByEmail('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prescriptions))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 10:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:51:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:51:29 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+CRITICAL - 2024-09-29 10:51:29 --> TypeError: file_exists(): Argument #1 ($filename) must be of type string, CodeIgniter\HTTP\RedirectResponse given
+in APPPATH\Controllers\Prescriptions.php on line 274.
+ 1 APPPATH\Controllers\Prescriptions.php(274): file_exists(Object(CodeIgniter\HTTP\RedirectResponse))
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Prescriptions->sendVoucherByEmail('16')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prescriptions))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 10:51:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:57:54 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+CRITICAL - 2024-09-29 10:57:54 --> TypeError: file_exists(): Argument #1 ($filename) must be of type string, CodeIgniter\HTTP\RedirectResponse given
+in APPPATH\Controllers\Prescriptions.php on line 274.
+ 1 APPPATH\Controllers\Prescriptions.php(274): file_exists(Object(CodeIgniter\HTTP\RedirectResponse))
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Prescriptions->sendVoucherByEmail('15')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prescriptions))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 10:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:59:44 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+ERROR - 2024-09-29 10:59:44 --> El archivo PDF no existe en: 
+INFO - 2024-09-29 10:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 10:59:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 10:59:50 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+ERROR - 2024-09-29 10:59:50 --> El archivo PDF no existe en: 
+INFO - 2024-09-29 11:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 11:01:22 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+ERROR - 2024-09-29 11:01:22 --> El archivo PDF no existe en: 
+INFO - 2024-09-29 11:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 11:01:28 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+ERROR - 2024-09-29 11:01:28 --> El archivo PDF no existe en: 
+INFO - 2024-09-29 11:02:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:02:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 11:02:15 --> Error en printVoucher: Invalid file: "admin/prescriptions/voucher.php"
+ERROR - 2024-09-29 11:02:15 --> El archivo PDF no existe en: 
+INFO - 2024-09-29 11:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:06:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:06:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 11:06:58 --> Error en sendVoucherByEmail: Invalid file: "admin/prescriptions/voucher.php"
+INFO - 2024-09-29 11:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:09:54 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/prescriptions/voucher_16.pdf
+CRITICAL - 2024-09-29 11:09:54 --> Error inesperado en sendVoucherByEmail: Undefined property: App\Controllers\Prescriptions::$PagosModel
+INFO - 2024-09-29 11:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:10:17 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/prescriptions/voucher_16.pdf
+CRITICAL - 2024-09-29 11:10:17 --> Error inesperado en sendVoucherByEmail: Undefined property: App\Controllers\Prescriptions::$PagosModel
+INFO - 2024-09-29 11:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:13:07 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/prescriptions/voucher_16.pdf
+INFO - 2024-09-29 11:13:10 --> Correo enviado correctamente a: juanfranco561@gmail.com
+INFO - 2024-09-29 11:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:13:50 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/prescriptions/voucher_15.pdf
+INFO - 2024-09-29 11:13:52 --> Correo enviado correctamente a: juanfranco561@gmail.com
+INFO - 2024-09-29 11:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 11:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:16:19 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/prescriptions/voucher_16.pdf
+INFO - 2024-09-29 15:16:19 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/prescriptions/voucher_16.pdf
+INFO - 2024-09-29 15:16:21 --> Correo enviado correctamente a: juanfranco561@gmail.com
+INFO - 2024-09-29 15:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:22:51 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+INFO - 2024-09-29 15:22:51 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+CRITICAL - 2024-09-29 15:22:51 --> ErrorException: Undefined property: App\Controllers\Invoices::$email
+in APPPATH\Controllers\Invoices.php on line 285.
+ 1 APPPATH\Controllers\Invoices.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Invoices::$email', 'C:\\laragon\\www\\cx-pets\\app\\Controllers\\Invoices.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Invoices->sendVoucherByEmail('7')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 15:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:24:14 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+INFO - 2024-09-29 15:24:14 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+CRITICAL - 2024-09-29 15:24:14 --> ErrorException: Undefined property: App\Controllers\Invoices::$email
+in APPPATH\Controllers\Invoices.php on line 285.
+ 1 APPPATH\Controllers\Invoices.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Invoices::$email', 'C:\\laragon\\www\\cx-pets\\app\\Controllers\\Invoices.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Invoices->sendVoucherByEmail('7')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 15:24:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:24:29 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+INFO - 2024-09-29 15:24:29 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+CRITICAL - 2024-09-29 15:24:29 --> ErrorException: Undefined property: App\Controllers\Invoices::$email
+in APPPATH\Controllers\Invoices.php on line 285.
+ 1 APPPATH\Controllers\Invoices.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Invoices::$email', 'C:\\laragon\\www\\cx-pets\\app\\Controllers\\Invoices.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Invoices->sendVoucherByEmail('7')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 15:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:26:28 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+INFO - 2024-09-29 15:26:28 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+INFO - 2024-09-29 15:26:30 --> Correo enviado correctamente a: juanfranco561@gmail.com
+INFO - 2024-09-29 15:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:27:17 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_8.pdf
+INFO - 2024-09-29 15:27:17 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_8.pdf
+INFO - 2024-09-29 15:27:18 --> Correo enviado correctamente a: juanfranco561@gmail.com
+INFO - 2024-09-29 15:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:27:53 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+INFO - 2024-09-29 15:27:53 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_7.pdf
+INFO - 2024-09-29 15:27:55 --> Correo enviado correctamente a: juanfranco561@gmail.com
+INFO - 2024-09-29 15:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:31 --> PDF guardado en: C:\laragon\www\cx-pets\public\uploads/pdf/invoices/voucher_8.pdf
+INFO - 2024-09-29 15:35:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:39:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 17:02:17 --> ErrorException: file_get_contents(C:\laragon\www\cx-pets\writable\debugbar/debugbar_1727624545.212394.json): Failed to open stream: No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 86.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(C:\\laragon\\www\\cx-pets\\writable\\debugbar/debugbar_1727624545.212394.json): Failed to open stream: No such file or directory', 'C:\\laragon\\www\\cx-pets\\system\\Debug\\Toolbar\\Collectors\\History.php', 86)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(86): file_get_contents('C:\\laragon\\www\\cx-pets\\writable\\debugbar/debugbar_1727624545.212394.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(498): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1727629336.140742', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(475): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(154): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 17:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 17:27:28 --> ErrorException: Undefined array key "name"
+in APPPATH\Controllers\Appointments.php on line 69.
+ 1 APPPATH\Controllers\Appointments.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\cx-pets\\app\\Controllers\\Appointments.php', 69)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 17:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 18:01:03 --> Error: Class "App\Models\AppointmentModel" not found
+in APPPATH\Controllers\Appointments.php on line 76.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 18:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 18:01:24 --> Error: Class "App\Models\AppointmentModel" not found
+in APPPATH\Controllers\Appointments.php on line 76.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 18:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 18:02:12 --> ErrorException: Undefined array key "first_name"
+in APPPATH\Controllers\Appointments.php on line 87.
+ 1 APPPATH\Controllers\Appointments.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "first_name"', 'C:\\laragon\\www\\cx-pets\\app\\Controllers\\Appointments.php', 87)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 18:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 18:06:36 --> mysqli_sql_exception: Table 'pets_ci4.clients' doesn't exist in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appoint...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appoint...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appoint...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appoint...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(679): CodeIgniter\Model->doFirst()
+#6 C:\laragon\www\cx-pets\app\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-29 18:06:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'pets_ci4.clients' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:06:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'pets_ci4.clients' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:06:36 --> [Caused by] mysqli_sql_exception: Table 'pets_ci4.clients' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 18:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 18:06:43 --> mysqli_sql_exception: Table 'pets_ci4.clients' doesn't exist in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appoint...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appoint...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appoint...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appoint...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(679): CodeIgniter\Model->doFirst()
+#6 C:\laragon\www\cx-pets\app\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-29 18:06:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'pets_ci4.clients' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:06:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'pets_ci4.clients' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:06:43 --> [Caused by] mysqli_sql_exception: Table 'pets_ci4.clients' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `clients`.`first_name`, `clients`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `clients` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 18:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 18:07:26 --> mysqli_sql_exception: Unknown column 'appointments.client_id' in 'on clause' in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appoint...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appoint...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appoint...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appoint...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(679): CodeIgniter\Model->doFirst()
+#6 C:\laragon\www\cx-pets\app\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-29 18:07:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'appointments.client_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:07:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'appointments.client_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:07:26 --> [Caused by] mysqli_sql_exception: Unknown column 'appointments.client_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 18:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 18:07:34 --> mysqli_sql_exception: Unknown column 'appointments.client_id' in 'on clause' in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appoint...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appoint...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appoint...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appoint...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(679): CodeIgniter\Model->doFirst()
+#6 C:\laragon\www\cx-pets\app\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-29 18:07:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'appointments.client_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:07:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'appointments.client_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-29 18:07:34 --> [Caused by] mysqli_sql_exception: Unknown column 'appointments.client_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = 5
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `owners`.`first_name`, `owners`.`last_name`, `pets`.`name` as `mascota`
+FROM `appointments`
+JOIN `owners` ON `appointments`.`client_id` = `clients`.`id`
+JOIN `pets` ON `appointments`.`pet_id` = `pets`.`id`
+WHERE `appointments`.`id` = :appointments.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(271): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Appointments.php(86): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Appointments->sendReminder()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-29 18:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 18:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:07:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:21:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:23:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:31:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:31:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:34:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:34:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 19:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

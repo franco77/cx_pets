@@ -1,0 +1,854 @@
+INFO - 2024-10-02 08:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 08:55:09 --> mysqli_sql_exception: Column 'id' in field list is ambiguous in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `p...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `p...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `p...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `p...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\app\Models\VaccinesModel.php(42): CodeIgniter\Model->__call('get', Array)
+#6 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(42): App\Models\VaccinesModel->filter('', '10', '0', 'pet_id', 'DESC')
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-10-02 08:55:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10', [], false)
+ 2 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\VaccinesModel.php(42): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Vaccines.php(42): App\Models\VaccinesModel->filter('', '10', '0', 'pet_id', 'DESC')
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-02 08:55:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10', [], false)
+ 4 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\VaccinesModel.php(42): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\Vaccines.php(42): App\Models\VaccinesModel->filter('', '10', '0', 'pet_id', 'DESC')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-02 08:55:09 --> [Caused by] mysqli_sql_exception: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `pet_id`, `vaccine_date`, `notes`, `created_at`, `updated_at`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+ORDER BY `pet_id` DESC
+ LIMIT 10', [], false)
+ 5 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\VaccinesModel.php(42): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Vaccines.php(42): App\Models\VaccinesModel->filter('', '10', '0', 'pet_id', 'DESC')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-02 08:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 08:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:21:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:24:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:30:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:43:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:43:50 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:43:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:43:52 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:44:05 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:47:00 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:47:36 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:52:23 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:52:55 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2024-10-02 09:52:55 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:57:49 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2024-10-02 09:57:49 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 09:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:58:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 09:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 09:58:13 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`pets_ci4`.`vaccine_details`, CONSTRAINT `vaccine_details_ibfk_1` FOREIGN KEY (`vaccine_id`) REFERENCES `vaccines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `va...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `va...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `va...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `va...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\cx-pets\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\cx-pets\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(123): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->create()
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#10 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+INFO - 2024-10-02 10:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 10:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:03:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:03:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:15:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:15:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 12:25:04 --> mysqli_sql_exception: Column 'created_at' in where clause is ambiguous in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `vaccine...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `vaccine...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `vaccine...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccine...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\app\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', Array)
+#6 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('n', '10', '0', 'notes', 'asc')
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-10-02 12:25:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE :pet_id: ESCAPE \'!\'
+OR  `vaccine_date` LIKE :vaccine_date: ESCAPE \'!\'
+OR  `notes` LIKE :notes: ESCAPE \'!\'
+OR  `created_at` LIKE :created_at: ESCAPE \'!\'
+OR  `updated_at` LIKE :updated_at: ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10', [...], false)
+ 2 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('n', '10', '0', 'notes', 'asc')
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-02 12:25:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE \'%n%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%n%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%n%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%n%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%n%\' ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE \'%n%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%n%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%n%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%n%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%n%\' ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE :pet_id: ESCAPE \'!\'
+OR  `vaccine_date` LIKE :vaccine_date: ESCAPE \'!\'
+OR  `notes` LIKE :notes: ESCAPE \'!\'
+OR  `created_at` LIKE :created_at: ESCAPE \'!\'
+OR  `updated_at` LIKE :updated_at: ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10', [...], false)
+ 4 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('n', '10', '0', 'notes', 'asc')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-02 12:25:04 --> [Caused by] mysqli_sql_exception: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE \'%n%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%n%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%n%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%n%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%n%\' ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE \'%n%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%n%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%n%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%n%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%n%\' ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE \'%n%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%n%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%n%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%n%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%n%\' ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pet_id` LIKE :pet_id: ESCAPE \'!\'
+OR  `vaccine_date` LIKE :vaccine_date: ESCAPE \'!\'
+OR  `notes` LIKE :notes: ESCAPE \'!\'
+OR  `created_at` LIKE :created_at: ESCAPE \'!\'
+OR  `updated_at` LIKE :updated_at: ESCAPE \'!\'
+ )
+ORDER BY `notes` ASC
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('n', '10', '0', 'notes', 'asc')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-02 12:28:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:28:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-02 12:28:28 --> mysqli_sql_exception: Column 'created_at' in where clause is ambiguous in C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cx-pets\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `vaccine...', 0)
+#1 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `vaccine...')
+#2 C:\laragon\www\cx-pets\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `vaccine...')
+#3 C:\laragon\www\cx-pets\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccine...', Array, false)
+#4 C:\laragon\www\cx-pets\system\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cx-pets\app\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', Array)
+#6 C:\laragon\www\cx-pets\app\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('p', '10', '0', 'name', 'DESC')
+#7 C:\laragon\www\cx-pets\system\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+#8 C:\laragon\www\cx-pets\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+#9 C:\laragon\www\cx-pets\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\cx-pets\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-10-02 12:28:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE :pets.name: ESCAPE \'!\'
+OR  `vaccine_date` LIKE :vaccine_date: ESCAPE \'!\'
+OR  `notes` LIKE :notes: ESCAPE \'!\'
+OR  `created_at` LIKE :created_at: ESCAPE \'!\'
+OR  `updated_at` LIKE :updated_at: ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10', [...], false)
+ 2 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('p', '10', '0', 'name', 'DESC')
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-02 12:28:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE \'%p%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%p%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%p%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%p%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%p%\' ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE \'%p%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%p%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%p%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%p%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%p%\' ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE :pets.name: ESCAPE \'!\'
+OR  `vaccine_date` LIKE :vaccine_date: ESCAPE \'!\'
+OR  `notes` LIKE :notes: ESCAPE \'!\'
+OR  `created_at` LIKE :created_at: ESCAPE \'!\'
+OR  `updated_at` LIKE :updated_at: ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10', [...], false)
+ 4 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('p', '10', '0', 'name', 'DESC')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-02 12:28:28 --> [Caused by] mysqli_sql_exception: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE \'%p%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%p%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%p%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%p%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%p%\' ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE \'%p%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%p%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%p%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%p%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%p%\' ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE \'%p%\' ESCAPE \'!\'
+OR  `vaccine_date` LIKE \'%p%\' ESCAPE \'!\'
+OR  `notes` LIKE \'%p%\' ESCAPE \'!\'
+OR  `created_at` LIKE \'%p%\' ESCAPE \'!\'
+OR  `updated_at` LIKE \'%p%\' ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `vaccines`.`id`, `vaccines`.`pet_id`, `vaccines`.`vaccine_date`, `vaccines`.`notes`, `vaccines`.`created_at`, `vaccines`.`updated_at`, `pets`.`id` AS `petId`, `pets`.`name`
+FROM `vaccines`
+JOIN `pets` ON `pets`.`id` = `vaccines`.`pet_id`
+WHERE   (
+`pets`.`name` LIKE :pets.name: ESCAPE \'!\'
+OR  `vaccine_date` LIKE :vaccine_date: ESCAPE \'!\'
+OR  `notes` LIKE :notes: ESCAPE \'!\'
+OR  `created_at` LIKE :created_at: ESCAPE \'!\'
+OR  `updated_at` LIKE :updated_at: ESCAPE \'!\'
+ )
+ORDER BY `name` DESC
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(877): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\VaccinesModel.php(40): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Vaccines.php(44): App\Models\VaccinesModel->filter('p', '10', '0', 'name', 'DESC')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->data()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-02 12:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:42:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-02 12:42:27 --> ErrorException: Undefined array key "start_date"
+in APPPATH\Views\admin\vaccines\print.php on line 225.
+ 1 APPPATH\Views\admin\vaccines\print.php(225): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "start_date"', 'C:\\laragon\\www\\cx-pets\\app\\Views\\admin\\vaccines\\print.php', 225)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\cx-pets\\app\\Views\\admin\\vaccines\\print.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/vaccines/print', [], true)
+ 5 APPPATH\Controllers\Vaccines.php(165): view('admin/vaccines/print', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Vaccines->printVoucherView('10')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vaccines))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-02 12:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 12:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:03:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:11:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:25:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 13:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:39:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:41:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:41:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 15:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 19:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 19:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 19:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 19:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-02 19:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

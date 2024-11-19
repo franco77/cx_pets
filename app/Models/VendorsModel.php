@@ -1,0 +1,82 @@
+<?php
+namespace App\Models;
+use CodeIgniter\Model;
+
+class VendorsModel extends Model{
+   protected $table      = 'vendors';
+   protected $primaryKey = 'id';
+   protected $allowedFields = ['name', 'description', 'created_at'];
+   protected $searchFields = ['name', 'description', 'created_at', ];
+
+   public function filter($search = null, $limit = null, $start = null, $orderField = null, $orderDir = null){
+      $builder = $this->table($this->table);
+
+      $i = 0;
+      foreach ($this->searchFields as $column)
+      {
+            if($search)
+            {
+               if($i == 0)
+               {
+                  $builder->groupStart()
+                          ->like($column, $search);
+               }
+               else
+               {
+                  $builder->orLike($column, $search);
+               }
+
+               if(count($this->searchFields) - 1 == $i) $builder->groupEnd();
+
+            }
+            $i++;
+      }
+
+      // Muestra datos menores o iguales a las primeras 6 columnas.
+	  
+      $builder->select('id, name, description, created_at, ')
+              ->orderBy($orderField, $orderDir)
+              ->limit($limit, $start);
+
+      $query = $builder->get()->getResultArray();
+
+      foreach ($query as $index => $value) {
+         $query[$index]['column_bulk'] = '<input type="checkbox" class="bulk-item" value="'.$query[$index][$this->primaryKey].'">';
+         $query[$index]['column_action'] = '<button class="btn btn-sm btn-xs btn-success form-action" item-id="'.$query[$index][$this->primaryKey].'" purpose="detail"><i class="far fa-eye"></i></button> <button class="btn btn-sm btn-xs btn-warning form-action" purpose="edit" item-id="'.$query[$index][$this->primaryKey].'"><i class="far fa-edit"></i></button>';
+      }
+      return $query;
+   }
+
+   public function countTotal(){
+      return $this->table($this->table)
+                  ->countAll();
+   }
+
+   public function countFilter($search){
+      $builder = $this->table($this->table);
+
+      $i = 0;
+      foreach ($this->searchFields as $column)
+      {
+            if($search)
+            {
+               if($i == 0)
+               {
+                  $builder->groupStart()
+                          ->like($column, $search);
+               }
+               else
+               {
+                  $builder->orLike($column, $search);
+               }
+
+               if(count($this->searchFields) - 1 == $i) $builder->groupEnd();
+
+            }
+            $i++;
+      }
+
+      return $builder->countAllResults();
+   }
+
+}
