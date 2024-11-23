@@ -141,45 +141,54 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Bucle de las citas -->
-                            <?php foreach ($appointments as $index => $appointment): ?>
-                                <tr id="appointment-<?= $appointment['id'] ?>">
-                                    <td><?= $index + 1 ?></td>
-                                    <td><?= $appointment['first_name'] . ' ' . $appointment['last_name'] ?></td>
-                                    <td><?= $appointment['name'] ?></td>
-                                    <td><?= $appointment['appointment_time'] ?></td>
-                                    <td><?= $appointment['reason'] ?></td>
-                                    <td>
-                                        <span class="badge <?= $appointment['status'] ?>">
-                                            <?= ucfirst($appointment['status']) ?>
-                                        </span>
+                            <?php if (empty($appointments)): ?>
+                                <tr>
+                                    <td colspan="8" class="text-center">
+                                        <div class="alert alert-warning">No Hay Citas!</div>
                                     </td>
-                                    <td>
-                                        <select class="form-control change-status" data-id="<?= $appointment['id'] ?>">
-                                            <option value="pending"
-                                                <?= $appointment['status'] == 'pending' ? 'selected' : '' ?>>Pending
-                                            </option>
-                                            <option value="confirmed"
-                                                <?= $appointment['status'] == 'confirmed' ? 'selected' : '' ?>>Confirmed
-                                            </option>
-                                            <option value="completed"
-                                                <?= $appointment['status'] == 'completed' ? 'selected' : '' ?>>Completed
-                                            </option>
-                                            <option value="cancelled"
-                                                <?= $appointment['status'] == 'cancelled' ? 'selected' : '' ?>>Cancelled
-                                            </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-primary send-reminder btn-sm"
-                                            data-id="<?= $appointment['id'] ?>"
-                                            data-email="<?= $appointment['email'] ?>">Enviar Recordatorio</button>
-                                    </td> <!-- Columna para el botón de recordatorio -->
                                 </tr>
-                            <?php endforeach; ?>
+                            <?php else: ?>
+                                <!-- Bucle de las citas -->
+                                <?php foreach ($appointments as $index => $appointment): ?>
+                                    <tr id="appointment-<?= $appointment['id'] ?>">
+                                        <td><?= $index + 1 ?></td>
+                                        <td><?= $appointment['first_name'] . ' ' . $appointment['last_name'] ?></td>
+                                        <td><?= $appointment['name'] ?></td>
+                                        <td><?= $appointment['appointment_time'] ?></td>
+                                        <td><?= $appointment['reason'] ?></td>
+                                        <td>
+                                            <span class="badge <?= $appointment['status'] ?>">
+                                                <?= ucfirst($appointment['status']) ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <select class="form-control change-status" data-id="<?= $appointment['id'] ?>">
+                                                <option value="pending"
+                                                    <?= $appointment['status'] == 'pending' ? 'selected' : '' ?>>Pending
+                                                </option>
+                                                <option value="confirmed"
+                                                    <?= $appointment['status'] == 'confirmed' ? 'selected' : '' ?>>Confirmed
+                                                </option>
+                                                <option value="completed"
+                                                    <?= $appointment['status'] == 'completed' ? 'selected' : '' ?>>Completed
+                                                </option>
+                                                <option value="cancelled"
+                                                    <?= $appointment['status'] == 'cancelled' ? 'selected' : '' ?>>Cancelled
+                                                </option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary send-reminder btn-sm"
+                                                data-id="<?= $appointment['id'] ?>"
+                                                data-email="<?= $appointment['email'] ?>">Enviar Recordatorio</button>
+                                        </td> <!-- Columna para el botón de recordatorio -->
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
+
 
             </div> <!-- end card body-->
         </div> <!-- end card -->
