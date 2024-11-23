@@ -59,6 +59,51 @@ class Invoices extends BaseController
    }
 
 
+
+   public function showInvoiceModal($invoiceId)
+   {
+
+      $invoice = $this->InvoicesModel->find($invoiceId);
+
+      return $this->response->setJSON([
+         'id' => $invoice['id'],
+         'invoice_total' => $invoice['invoice_total'],
+         'amount_paid' => $invoice['amount_paid'],
+         'amount_due' => $invoice['amount_due'],
+         'uuid' => $invoice['uuid']
+      ]);
+   }
+
+   public function processPayment()
+   {
+      $invoiceId = $this->request->getPost('invoice_id');
+      $paymentAmount = $this->request->getPost('payment_amount');
+
+      $invoice = $this->InvoicesModel->find($invoiceId);
+
+      if ($paymentAmount <= $invoice['amount_due']) {
+         $newAmountPaid = $invoice['amount_paid'] + $paymentAmount;
+
+         $updateData = [
+            'amount_paid' => $newAmountPaid,
+            'amount_due' => $invoice['invoice_total'] - $newAmountPaid
+         ];
+
+         $result = $this->InvoicesModel->update($invoiceId, $updateData);
+
+         return $this->response->setJSON([
+            'success' => $result,
+            'message' => $result ? 'Payment processed successfully' : 'Payment failed'
+         ]);
+      }
+
+      return $this->response->setJSON([
+         'success' => false,
+         'message' => 'Invalid payment amount'
+      ]);
+   }
+
+
    public function getOwnerDetails()
    {
       $ownerId = $this->request->getPost('client_id');

@@ -1,39 +1,39 @@
 <?= $this->extend('admin/layout/default') ?>
 <?= $this->section('content') ?>
 <style>
-/* Estilos previos aquí... */
-.badge {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    text-transform: capitalize;
-    cursor: pointer;
-}
+    /* Estilos previos aquí... */
+    .badge {
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
 
-.badge.success {
-    background-color: #27ae60;
-    color: white;
-}
+    .badge.success {
+        background-color: #27ae60;
+        color: white;
+    }
 
-.badge.confirmed {
-    background-color: #f39c12;
-    color: white;
-}
+    .badge.confirmed {
+        background-color: #f39c12;
+        color: white;
+    }
 
-.badge.pending {
-    background-color: #3498db;
-    color: white;
-}
+    .badge.pending {
+        background-color: #3498db;
+        color: white;
+    }
 
-.badge.completed {
-    background-color: #8e44ad;
-    color: white;
-}
+    .badge.completed {
+        background-color: #8e44ad;
+        color: white;
+    }
 
-.badge.cancelled {
-    background-color: #e74c3c;
-    color: white;
-}
+    .badge.cancelled {
+        background-color: #e74c3c;
+        color: white;
+    }
 </style>
 
 
@@ -45,13 +45,13 @@
                 <div class="row">
                     <div class="col-5">
                         <div class="icon-big text-center">
-                            <i class="icon-pie-chart text-warning"></i>
+                            <i class="icon-heart text-warning"></i>
                         </div>
                     </div>
                     <div class="col-7 col-stats">
                         <div class="numbers">
-                            <p class="card-category">Numbers</p>
-                            <h4 class="card-title">150GB</h4>
+                            <p class="card-category">Pets</p>
+                            <h4 class="card-title"><?= esc($total_pets) ?></h4>
                         </div>
                     </div>
                 </div>
@@ -64,13 +64,13 @@
                 <div class="row">
                     <div class="col-5">
                         <div class="icon-big text-center">
-                            <i class="icon-wallet text-success"></i>
+                            <i class="icon-user text-success"></i>
                         </div>
                     </div>
                     <div class="col-7 col-stats">
                         <div class="numbers">
-                            <p class="card-category">Revenue</p>
-                            <h4 class="card-title">$ 1,345</h4>
+                            <p class="card-category">Owners</p>
+                            <h4 class="card-title"><?= esc($total_owners) ?></h4>
                         </div>
                     </div>
                 </div>
@@ -83,13 +83,13 @@
                 <div class="row">
                     <div class="col-5">
                         <div class="icon-big text-center">
-                            <i class="icon-close text-danger"></i>
+                            <i class="icon-diamond text-danger"></i>
                         </div>
                     </div>
                     <div class="col-7 col-stats">
                         <div class="numbers">
-                            <p class="card-category">Errors</p>
-                            <h4 class="card-title">23</h4>
+                            <p class="card-category">Products</p>
+                            <h4 class="card-title"><?= esc($total_products) ?></h4>
                         </div>
                     </div>
                 </div>
@@ -102,13 +102,13 @@
                 <div class="row">
                     <div class="col-5">
                         <div class="icon-big text-center">
-                            <i class="icon-social-twitter text-primary"></i>
+                            <i class="icon-calendar text-primary"></i>
                         </div>
                     </div>
                     <div class="col-7 col-stats">
                         <div class="numbers">
-                            <p class="card-category">Followers</p>
-                            <h4 class="card-title">+45K</h4>
+                            <p class="card-category">Appointments Today</p>
+                            <h4 class="card-title"><?= esc($total_appointments) ?></h4>
                         </div>
                     </div>
                 </div>
@@ -143,39 +143,39 @@
                         <tbody>
                             <!-- Bucle de las citas -->
                             <?php foreach ($appointments as $index => $appointment): ?>
-                            <tr id="appointment-<?= $appointment['id'] ?>">
-                                <td><?= $index + 1 ?></td>
-                                <td><?= $appointment['first_name'] . ' ' . $appointment['last_name'] ?></td>
-                                <td><?= $appointment['name'] ?></td>
-                                <td><?= $appointment['appointment_time'] ?></td>
-                                <td><?= $appointment['reason'] ?></td>
-                                <td>
-                                    <span class="badge <?= $appointment['status'] ?>">
-                                        <?= ucfirst($appointment['status']) ?>
-                                    </span>
-                                </td>
-                                <td>
-                                    <select class="form-control change-status" data-id="<?= $appointment['id'] ?>">
-                                        <option value="pending"
-                                            <?= $appointment['status'] == 'pending' ? 'selected' : '' ?>>Pending
-                                        </option>
-                                        <option value="confirmed"
-                                            <?= $appointment['status'] == 'confirmed' ? 'selected' : '' ?>>Confirmed
-                                        </option>
-                                        <option value="completed"
-                                            <?= $appointment['status'] == 'completed' ? 'selected' : '' ?>>Completed
-                                        </option>
-                                        <option value="cancelled"
-                                            <?= $appointment['status'] == 'cancelled' ? 'selected' : '' ?>>Cancelled
-                                        </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary send-reminder btn-sm"
-                                        data-id="<?= $appointment['id'] ?>"
-                                        data-email="<?= $appointment['email'] ?>">Enviar Recordatorio</button>
-                                </td> <!-- Columna para el botón de recordatorio -->
-                            </tr>
+                                <tr id="appointment-<?= $appointment['id'] ?>">
+                                    <td><?= $index + 1 ?></td>
+                                    <td><?= $appointment['first_name'] . ' ' . $appointment['last_name'] ?></td>
+                                    <td><?= $appointment['name'] ?></td>
+                                    <td><?= $appointment['appointment_time'] ?></td>
+                                    <td><?= $appointment['reason'] ?></td>
+                                    <td>
+                                        <span class="badge <?= $appointment['status'] ?>">
+                                            <?= ucfirst($appointment['status']) ?>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <select class="form-control change-status" data-id="<?= $appointment['id'] ?>">
+                                            <option value="pending"
+                                                <?= $appointment['status'] == 'pending' ? 'selected' : '' ?>>Pending
+                                            </option>
+                                            <option value="confirmed"
+                                                <?= $appointment['status'] == 'confirmed' ? 'selected' : '' ?>>Confirmed
+                                            </option>
+                                            <option value="completed"
+                                                <?= $appointment['status'] == 'completed' ? 'selected' : '' ?>>Completed
+                                            </option>
+                                            <option value="cancelled"
+                                                <?= $appointment['status'] == 'cancelled' ? 'selected' : '' ?>>Cancelled
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary send-reminder btn-sm"
+                                            data-id="<?= $appointment['id'] ?>"
+                                            data-email="<?= $appointment['email'] ?>">Enviar Recordatorio</button>
+                                    </td> <!-- Columna para el botón de recordatorio -->
+                                </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -198,81 +198,81 @@
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script>
-$(document).ready(function() {
-    $('.change-status').on('change', function() {
-        var appointmentId = $(this).data('id');
-        var newStatus = $(this).val();
+    $(document).ready(function() {
+        $('.change-status').on('change', function() {
+            var appointmentId = $(this).data('id');
+            var newStatus = $(this).val();
 
-        // Enviar solicitud AJAX al servidor para actualizar el estado
-        $.ajax({
-            url: '<?= base_url('appointments/updateAppointmentStatus') ?>', // Asegúrate de cambiar esta URL a la correcta en tu aplicación
-            method: 'POST',
-            data: {
-                id: appointmentId,
-                status: newStatus
-            },
-            success: function(response) {
-                if (response.success) {
-                    // Actualizar el badge en la tabla
-                    var badge = $('#appointment-' + appointmentId + ' .badge');
-                    badge.removeClass().addClass('badge ' + newStatus);
-                    badge.text(newStatus.charAt(0).toUpperCase() + newStatus.slice(1));
-                } else {
-                    alert('Error al actualizar el estado.');
+            // Enviar solicitud AJAX al servidor para actualizar el estado
+            $.ajax({
+                url: '<?= base_url('appointments/updateAppointmentStatus') ?>', // Asegúrate de cambiar esta URL a la correcta en tu aplicación
+                method: 'POST',
+                data: {
+                    id: appointmentId,
+                    status: newStatus
+                },
+                success: function(response) {
+                    if (response.success) {
+                        // Actualizar el badge en la tabla
+                        var badge = $('#appointment-' + appointmentId + ' .badge');
+                        badge.removeClass().addClass('badge ' + newStatus);
+                        badge.text(newStatus.charAt(0).toUpperCase() + newStatus.slice(1));
+                    } else {
+                        alert('Error al actualizar el estado.');
+                    }
+                },
+                error: function() {
+                    alert('Error en la solicitud.');
                 }
-            },
-            error: function() {
-                alert('Error en la solicitud.');
-            }
+            });
         });
     });
-});
 
-$(document).ready(function() {
-    // Capturamos el clic en el botón de enviar recordatorio
-    $('.send-reminder').on('click', function() {
-        const appointmentId = $(this).data('id'); // Obtenemos el ID de la cita
-        const email = $(this).data('email'); // Obtenemos el correo del cliente
+    $(document).ready(function() {
+        // Capturamos el clic en el botón de enviar recordatorio
+        $('.send-reminder').on('click', function() {
+            const appointmentId = $(this).data('id'); // Obtenemos el ID de la cita
+            const email = $(this).data('email'); // Obtenemos el correo del cliente
 
-        // Enviamos la solicitud AJAX
-        $.ajax({
-            url: '<?= base_url('appointments/sendReminder') ?>', // URL del controlador en CodeIgniter
-            type: 'POST',
-            dataType: 'json',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                id: appointmentId,
-                email: email
-            }),
-            success: function(response) {
-                if (response.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Enviado!',
-                        text: 'El recordatorio fue enviado con éxito.',
-                        confirmButtonText: 'OK'
-                    });
-                } else {
+            // Enviamos la solicitud AJAX
+            $.ajax({
+                url: '<?= base_url('appointments/sendReminder') ?>', // URL del controlador en CodeIgniter
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    id: appointmentId,
+                    email: email
+                }),
+                success: function(response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Enviado!',
+                            text: 'El recordatorio fue enviado con éxito.',
+                            confirmButtonText: 'OK'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Hubo un problema al enviar el recordatorio: ' +
+                                response.message,
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error en la solicitud:', error);
                     Swal.fire({
                         icon: 'error',
-                        title: 'Error',
-                        text: 'Hubo un problema al enviar el recordatorio: ' +
-                            response.message,
+                        title: 'Error en el servidor',
+                        text: 'Hubo un problema con el servidor. Inténtelo de nuevo más tarde.',
                         confirmButtonText: 'OK'
                     });
                 }
-            },
-            error: function(xhr, status, error) {
-                console.error('Error en la solicitud:', error);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error en el servidor',
-                    text: 'Hubo un problema con el servidor. Inténtelo de nuevo más tarde.',
-                    confirmButtonText: 'OK'
-                });
-            }
+            });
         });
     });
-});
 </script>
 <?= $this->endSection() ?>

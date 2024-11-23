@@ -23,14 +23,48 @@ class Dashboard extends BaseController
     }
 
 
+    public function getDashboardStatistics()
+    {
+        $builder = $this->db->table('owners');
+        $query = $builder->select([
+            '(SELECT COUNT(*) FROM owners) AS total_owners',
+            '(SELECT COUNT(*) FROM pets) AS total_pets',
+            '(SELECT COUNT(*) FROM products) AS total_products',
+            '(SELECT COUNT(*) 
+                     FROM appointments 
+                     WHERE (status = "pending" OR status = "confirmed") 
+                       AND appointment_date = CURDATE()
+                    ) AS total_appointments'
+        ])->get();
+
+        $result = $query->getRow();
+
+        if ($result) {
+            return $result;
+        } else {
+
+            return (object)[
+                'total_owners' => 0,
+                'total_pets' => 0,
+                'total_products' => 0,
+                'total_appointments' => 0
+            ];
+        }
+    }
+
+
     public function index()
     {
         // Obtener las citas del día de hoy
-        $today = "2024-09-30";
+        $today = date('Y-m-d');
         $appointments = $this->getAppointmentsByDate($today);
-
+        $statistics       = $this->getDashboardStatistics();
         $data = [
             'title' => 'Dashboard',
+            'total_owners' => $statistics->total_owners,
+            'total_pets' => $statistics->total_pets,
+            'total_products' => $statistics->total_products,
+            'total_appointments' => $statistics->total_appointments,
             'appointments' => $appointments,
 
         ];
