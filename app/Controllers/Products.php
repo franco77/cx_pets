@@ -124,12 +124,12 @@ class Products extends BaseController
             // De forma predeterminada, solo muestra datos de la tabla principal.
 
             $table = '<table class="table table-sm activate-select dt-responsive nowrap w-100">';
-            $table .= '<tr><th>ProductName</th><td>' . $data['productName'] . '</td></tr>';
-            $table .= '<tr><th>ProductLine</th><td>' . $data['productLine'] . '</td></tr>';
-            $table .= '<tr><th>ProductVendor</th><td>' . $data['productVendor'] . '</td></tr>';
-            $table .= '<tr><th>ProductDescription</th><td>' . $data['productDescription'] . '</td></tr>';
-            $table .= '<tr><th>QuantityInStock</th><td>' . $data['quantityInStock'] . '</td></tr>';
-            $table .= '<tr><th>BuyPrice</th><td>' . $data['buyPrice'] . '</td></tr>';
+            $table .= '<tr><th>Name</th><td>' . $data['productName'] . '</td></tr>';
+            $table .= '<tr><th>Categoría</th><td>' . $data['productLine'] . '</td></tr>';
+            $table .= '<tr><th>Vendor</th><td>' . $data['productVendor'] . '</td></tr>';
+            $table .= '<tr><th>Description</th><td>' . $data['productDescription'] . '</td></tr>';
+            $table .= '<tr><th>Quantity In Stock</th><td>' . $data['quantityInStock'] . '</td></tr>';
+            $table .= '<tr><th>Price</th><td>' . $data['buyPrice'] . '</td></tr>';
             $table .= '</table>';
             return $this->respond($table);;
          } else {

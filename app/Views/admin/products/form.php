@@ -14,13 +14,13 @@
 
 
    <div class="mb-3">
-      <label for="productName" class="form-label">ProductName</label>
+      <label for="productName" class="form-label">Name</label>
       <input type="text" name="productName"
          value="<?= !empty($data_products['productName']) ? $data_products['productName'] : '' ?>"
          class="form-control" />
    </div>
    <div class="mb-3">
-      <label for="productLine" class="form-label">ProductLine</label>
+      <label for="productLine" class="form-label">Categoría</label>
       <input type="text" name="productLine"
          value="<?= !empty($data_products['productLine']) ? $data_products['productLine'] : '' ?>"
          class="form-control" />
@@ -29,7 +29,7 @@
    <div class="row">
       <div class="col">
          <div class="mb-3">
-            <label for="quantityInStock" class="form-label">QuantityInStock</label>
+            <label for="quantityInStock" class="form-label">Quantity</label>
             <input type="text" name="quantityInStock"
                value="<?= !empty($data_products['quantityInStock']) ? $data_products['quantityInStock'] : '' ?>"
                class="form-control" />
@@ -37,7 +37,7 @@
       </div>
       <div class="col">
          <div class="mb-3">
-            <label for="buyPrice" class="form-label">BuyPrice</label>
+            <label for="buyPrice" class="form-label">Price</label>
             <input type="text" name="buyPrice"
                value="<?= !empty($data_products['buyPrice']) ? $data_products['buyPrice'] : '' ?>"
                class="form-control" />
